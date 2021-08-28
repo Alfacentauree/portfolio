@@ -1,0 +1,51 @@
+{% extends 'personel/base.html' %} {% load static %} {% block content %}
+<div class="container">
+  <div class="row justify-content-center my-3">
+    <div class="col-5">
+      <img id="img-source" src="{% static 'img/Avatar.jpg' %}" class="img-fluid" />
+    </div>
+  </div>
+
+  <div class="row justify-content-center mb-3">
+    <div class="col-md-9 text-center">
+      <h1 id="hometext" class="font-weight-bold">
+        Adil Ansari is Commander-in-Chief at Coder AD and lives in Downtown
+        India 🙂
+      </h1>
+      <br /><br />
+      <h2 class="row justify-content-center my-3">Portfolio</h2>
+    </div>
+  </div>
+</div>
+<hr />
+
+<!-- contents -->
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for project in projects %}
+      <div class="col">
+        <div class="card shadow-sm">
+          {% if project.url %}
+          <a href="{{ project.url }}">
+            
+            <img src="{{ project.image.url }}" class="img-fluid mb-2" />
+          </a>
+          {% else %}
+
+          <img src="{{ project.image.url }}" class="img-fluid mb-2" />
+          {% endif %}
+
+          <div class="card-body">
+            <a href="">{{project.title}}</a>
+            <p class="card-text">{{ project.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
