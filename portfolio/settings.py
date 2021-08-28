@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7d3cp2x5)1%4_y1^z%%dq-50747k_tt$_&^$+c)008_h%%tm1%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['adilansari.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','adilansari.herokuapp.com']
 
 
 # Application definition
@@ -123,7 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 
 MEDIA_URL = '/media/'
